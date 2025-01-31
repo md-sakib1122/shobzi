@@ -8,6 +8,35 @@
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
+    <style>
+        #animate{
+
+          animation-name: example;
+          animation-duration: 6s;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          transform-origin: bottom;
+        }
+        
+
+        @keyframes example {
+            0% {
+              transform: rotate(0deg);
+            }
+            25% {
+              transform: rotate(4deg);  /* Rotate slowly to the right */
+            }
+            50% {
+              transform: rotate(0deg);  /* Pause at 0deg */
+            }
+            75% {
+              transform: rotate(-4deg);  /* Rotate slowly to the left */
+            }
+            100% {
+              transform: rotate(0deg);  /* Return to starting point */
+            }
+      }
+    </style>
 </head>
 <body>
   <div style="background: linear-gradient(180.00deg, rgb(255, 255, 255),rgb(239, 235, 227) 100%);">
@@ -50,8 +79,8 @@
              Shop your daily essentials at unbeatable prices. From fresh produce  to pantry staples,
              we’ve <br>got  you covered every day!
            </p>
-           <div class=" flex justify-center">
-              <img src="c2-assets/hero-vegetables.png" alt="">
+           <div class=" flex justify-center overflow-hidden">
+              <img class=" translate-y-5"  id="animate" src="c2-assets/hero-vegetables.png" alt="">
            </div>
         </div>
     </section>
